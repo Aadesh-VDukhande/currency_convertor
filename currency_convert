@@ -1,0 +1,14 @@
+with open ('currencyRates.txt') as f :           # we make a file that going read by this section
+    lines = f.readlines()
+# print(lines)
+currencyDict ={}
+for line in lines :
+    parsed = line .split("\t")
+    currencyDict[parsed[0]] = parsed[1]
+# print(currencyDict)    it will print the list of currency rate 
+amount = int (input("Enter your amount(Amount should be in Rupees) : "))
+print("\nChoice Country to that want to convert currency : " )
+[print(item) for item in currencyDict.keys()] 
+Country = input("\nPls! Enter your choice : ")
+print("\n")
+print(f"{amount} Rupees in {Country} is {amount * float(currencyDict[Country]) } ") 
